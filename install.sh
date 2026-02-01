@@ -1,48 +1,40 @@
 #!/bin/bash
 
-# Replace your username for DOTFILES_REPO
 DOTFILES_REPO="Mansfera/dotfiles"
 DOTFILES_PATH="$HOME/dotfiles"
-echo "✅ Installing Homebrew..."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-export PATH="/opt/homebrew/bin:$PATH"
-echo "✅ Homebrew added to PATH for this session."
 
-echo "✅ Installing gh, git, and stow..."
-brew install gh git stow
+[ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+[ -f /usr/local/bin/brew ] && eval "$(/usr/local/bin/brew shellenv)"
 
-echo "⚠️ Please log in to GitHub when prompted..."
+brew install git gh stow 1password
 
-echo "✅ Cloning dotfiles..."
+open -a "1Password"
+echo "Login to 1Password, then press Enter to continue..."
+read
+
+echo "⚠️ Log in to GitHub..."
+gh auth login
+
 gh repo clone $DOTFILES_REPO $DOTFILES_PATH
 cd $DOTFILES_PATH
-
-echo "✅ Running stow..."
 stow .
 
-echo "✅ Installing Oh My Zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-if [ "$SHELL" != "/bin/zsh" ] && [ "$SHELL" != "/usr/bin/zsh" ]; then
-    read -r -p "Do you want to set Zsh as your default shell? (y/N) " response
-    case "$response" in
-        [yY][eE][sS]|[yY])
-            if command -v zsh >/dev/null 2>&1; then
-                chsh -s "$(command -v zsh)"
-                echo "Zsh set as the default shell. You may need to restart your terminal for changes to take effect."
-            else
-                echo "Error: zsh command not found, cannot set as default shell."
-            fi
-            ;;
-        *)
-            echo "Skipping setting Zsh as the default shell."
-            ;;
-    esac
+if [ "$SHELL" != "$(command -v zsh)" ]; then
+    chsh -s "$(command -v zsh)"
 fi
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-echo "✅ Installing applications via Brewfile..."
+open https://github.com/Gaulomatic/AirPodsSanity/releases
+open https://github.com/fifty-six/Scarab/releases
+open https://appstorrent.ru/2411-betterdisplay-pro.html
+open https://appstorrent.ru/839-infuse.html
+open https://appstorrent.ru/2431-aldente-delat.html
+open https://appstorrent.ru/133-macbartender.html
+
+cd ~/Backup
 brew bundle install
 
-echo "🎉 Setup complete! Please **restart your terminal**."
+echo "🎉 Setup complete! Restart your terminal."
