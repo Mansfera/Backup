@@ -6,7 +6,7 @@ DOTFILES_PATH="$HOME/dotfiles"
 [ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 [ -f /usr/local/bin/brew ] && eval "$(/usr/local/bin/brew shellenv)"
 
-brew install git gh stow 1password
+brew install gh stow 1password
 
 open -a "1Password"
 echo "Login to 1Password, then press Enter to continue..."
