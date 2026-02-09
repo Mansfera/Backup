@@ -1,4 +1,5 @@
 tap "homebrew/cask"
+tap "homebrew/core"
 tap "lihaoyun6/tap"
 tap "teamookla/speedtest"
 tap "thusvill/livewallpaper"
