@@ -35,6 +35,8 @@ brew "gh"
 brew "git"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
+# GNU Privacy Guard (OpenPGP)
+brew "gnupg"
 # GNU grep, egrep and fgrep
 brew "grep"
 # Update of iperf: measures TCP, UDP, and SCTP bandwidth
@@ -55,6 +57,8 @@ brew "node"
 brew "ollama"
 # Development kit for the Java programming language
 brew "openjdk@21"
+# OpenBSD freely-licensed SSH connectivity tools
+brew "openssh"
 # Object-relational database system
 brew "postgresql@18", link: true
 # Theme for zsh
@@ -77,8 +81,12 @@ brew "tailscale"
 brew "tokei"
 # Internet file retriever
 brew "wget"
+# Tool for managing your YubiKey configuration
+brew "ykman"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
+# Command-line tool for the YubiKey PIV application
+brew "yubico-piv-tool"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
 # Password manager that keeps all passwords secure behind one password
@@ -91,8 +99,6 @@ cask "android-platform-tools"
 cask "android-studio"
 # Memory training application
 cask "anki"
-# Agent orchestration platform
-cask "antigravity"
 # Allows connection to a computer remotely
 cask "anydesk"
 # Chromium based browser
@@ -109,6 +115,8 @@ cask "blockbench"
 cask "checkra1n"
 # Anthropic's official Claude AI desktop app
 cask "claude"
+# Terminal-based AI coding assistant
+cask "claude-code"
 # Write, edit, and chat about your code with AI
 cask "cursor"
 # Voice and text chat software
@@ -155,6 +163,8 @@ cask "nvidia-geforce-now"
 cask "obs"
 # Replacement for Docker Desktop
 cask "orbstack"
+# Minecraft launcher
+cask "prismlauncher"
 # Imaging utility to install operating systems to a microSD card
 cask "raspberry-pi-imager"
 # Control your tools with a few keystrokes
@@ -179,6 +189,8 @@ cask "tunnelbear"
 cask "utm"
 # Custom Discord App
 cask "vesktop"
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Gecko based web browser
