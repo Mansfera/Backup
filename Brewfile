@@ -1,5 +1,3 @@
-tap "homebrew/cask"
-tap "homebrew/core"
 tap "lihaoyun6/tap", trusted: true
 tap "teamookla/speedtest", trusted: true
 tap "thusvill/livewallpaper", trusted: true
@@ -17,6 +15,8 @@ brew "cloc"
 brew "cloudflared"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# Select default apps for documents and URL schemes on macOS
+brew "duti"
 # Modern, maintained replacement for ls
 brew "eza"
 # Play, record, convert, and stream select audio and video codecs
@@ -43,6 +43,8 @@ brew "grep"
 brew "iperf3"
 # Securely transfers data between computers
 brew "magic-wormhole"
+# Mac App Store command-line interface
+brew "mas"
 # Java-based project management
 brew "maven"
 # NCurses Disk Usage
@@ -79,6 +81,8 @@ brew "stow"
 brew "tailscale"
 # Program that allows you to count code, quickly
 brew "tokei"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
 # Internet file retriever
 brew "wget"
 # Tool for managing your YubiKey configuration
@@ -163,8 +167,12 @@ cask "nvidia-geforce-now"
 cask "obs"
 # Replacement for Docker Desktop
 cask "orbstack"
+# Desktop virtualization software
+cask "parallels"
 # Minecraft launcher
 cask "prismlauncher"
+# HTTP debugging proxy
+cask "proxyman"
 # Imaging utility to install operating systems to a microSD card
 cask "raspberry-pi-imager"
 # Control your tools with a few keystrokes
@@ -177,6 +185,8 @@ cask "signal"
 cask "soduto"
 # Music streaming service
 cask "spotify"
+# Video game digital distribution service
+cask "steam"
 # Text editor for code, markup and prose
 cask "sublime-text"
 # Native GUI tool for relational databases
@@ -195,6 +205,18 @@ cask "vorssaint"
 cask "whatsapp"
 # Gecko based web browser
 cask "zen"
+mas "1Password for Safari", id: 1569813296
+mas "Apple Configurator", id: 1037126344
+mas "Blackmagic Disk Speed Test", id: 425264550
+mas "CATO", id: 6471651458
+mas "Infuse", id: 1136220934
+mas "Keynote", id: 361285480
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Transporter", id: 1450874784
+mas "Xcode", id: 497799835
+mas "Yubico Authenticator", id: 1497506650
 vscode "a5hk.night-coder"
 vscode "adpyke.codesnap"
 vscode "anthropic.claude-code"
