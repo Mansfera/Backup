@@ -55,6 +55,8 @@ brew "neofetch"
 brew "neovim"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
+# Classic snake game with textual interface
+brew "nsnake"
 # Create, run, and share large language models (LLMs)
 brew "ollama"
 # Development kit for the Java programming language
@@ -205,13 +207,17 @@ cask "vorssaint"
 cask "whatsapp"
 # Gecko based web browser
 cask "zen"
+# Video communication and virtual meeting platform
+cask "zoom"
 mas "1Password for Safari", id: 1569813296
 mas "Apple Configurator", id: 1037126344
 mas "Blackmagic Disk Speed Test", id: 425264550
 mas "CATO", id: 6471651458
 mas "Infuse", id: 1136220934
-mas "Keynote", id: 361285480
 mas "Keynote", id: 409183694
+mas "Keynote", id: 361285480
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft Word", id: 462054704
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Transporter", id: 1450874784
