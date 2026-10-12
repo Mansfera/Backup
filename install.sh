@@ -144,6 +144,14 @@ setup_yubikey() {
 }
 setup_yubikey
 
+# YubiKey agent forwarded to my servers (see ~/.ssh/agent-start.sh). Copied, not
+# stowed: launchd is unreliable with symlinked plists.
+AGENT_PLIST="$HOME/Library/LaunchAgents/com.mansfera.ssh-agent.plist"
+mkdir -p "${AGENT_PLIST%/*}"
+cp "$HOME/.ssh/com.mansfera.ssh-agent.plist" "$AGENT_PLIST"
+launchctl bootout "gui/$(id -u)" "$AGENT_PLIST" 2>/dev/null
+launchctl bootstrap "gui/$(id -u)" "$AGENT_PLIST"
+
 step "Last question"
 printf "    Signed in to the App Store? (needed for Xcode, Infuse, etc.) Press Enter when done "
 read -r _

@@ -147,7 +147,7 @@ cask "karabiner-elements"
 cask "keka"
 # App to manage software development and track bugs
 cask "linear"
-# Open-source live wallpaper application
+# Animated desktop wallpapers
 cask "thusvill/livewallpaper/livewallpaper"
 # Discover, download, and run local LLMs
 cask "lm-studio"
