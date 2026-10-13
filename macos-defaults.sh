@@ -33,5 +33,14 @@ defaults write NSGlobalDomain com.apple.trackpad.scaling -float 0.875
 # Menu bar clock with seconds
 defaults write com.apple.menuextra.clock ShowSeconds -bool true
 
+MAIL_KEYS=("Get All New Mail" '@r' "Show Sidebar" '@s' "Hide Sidebar" '@s' "Save" '@~s' "Show Fonts" '@^~$t')
+defaults write "$HOME/Library/Preferences/com.apple.mail" NSUserKeyEquivalents -dict-add "${MAIL_KEYS[@]}"
+if defaults write com.apple.mail NSUserKeyEquivalents -dict-add "${MAIL_KEYS[@]}" 2>/dev/null; then
+    defaults read com.apple.universalaccess com.apple.custommenu.apps 2>/dev/null | grep -q com.apple.mail ||
+        defaults write com.apple.universalaccess com.apple.custommenu.apps -array-add com.apple.mail 2>/dev/null
+else
+    echo "    ⚠️  Mail shortcuts not applied - give the terminal Full Disk Access and re-run macos-defaults.sh"
+fi
+
 killall Dock Finder SystemUIServer 2>/dev/null
 echo "    defaults applied (some need a logout)"
