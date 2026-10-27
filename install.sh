@@ -153,7 +153,7 @@ launchctl bootout "gui/$(id -u)" "$AGENT_PLIST" 2>/dev/null
 launchctl bootstrap "gui/$(id -u)" "$AGENT_PLIST"
 
 step "Last question"
-printf "    Signed in to the App Store? (needed for Xcode, Infuse, etc.) Press Enter when done "
+printf "    Signed in to the App Store? (needed for Xcode, Office, etc.) Press Enter when done "
 read -r _
 
 printf '\n\033[1;32m✅ That was the last prompt - you can walk away now.\033[0m\n'
@@ -180,14 +180,7 @@ command -v duti >/dev/null && duti "$BACKUP_PATH/duti.conf"
 # Phase 3 - manual
 # =============================================================================
 
-step "Opening the manual bits"
-open https://github.com/Gaulomatic/AirPodsSanity/releases
-open https://github.com/fifty-six/Scarab/releases
-open https://github.com/ExpressLRS/ExpressLRS-Configurator/releases
-open https://appstorrent.ru/2411-betterdisplay-pro.html
-open https://appstorrent.ru/839-infuse.html
-open https://appstorrent.ru/2431-aldente-delat.html
-open https://appstorrent.ru/133-macbartender.html
+step "Opening the Raycast import"
 for f in "$BACKUP_PATH"/*.rayconfig; do [ -f "$f" ] && open -a Raycast "$f"; done
 
 cat <<'EOF'
@@ -195,13 +188,13 @@ cat <<'EOF'
 ────────────────────────────────────────────────────────────────────
  Manual checklist
 ────────────────────────────────────────────────────────────────────
- [ ] Install the apps from the browser tabs that just opened
  [ ] Raycast: finish the import dialog (export password)
  [ ] System Settings → Privacy & Security: allow Karabiner driver,
      Accessibility for Raycast / Karabiner / BetterDisplay /
-     Bartender / AlDente, VPN configs for Tailscale / TunnelBear
+     Ice / AlDente, VPN configs for Tailscale / TunnelBear
  [ ] Sign in to apps (browsers, Google Drive, Telegram, Discord…)
- [ ] FinderMenu (samiyuru) - not on Homebrew, install by hand
+ [ ] Not on Homebrew, install by hand if needed: FinderMenu
+     (samiyuru), Scarab, ExpressLRS Configurator
  [ ] Tokens/keys go in ~/.secrets.zsh (untracked, loaded by .zshrc)
  [ ] Log out and back in so keyboard repeat and other defaults apply
 ────────────────────────────────────────────────────────────────────

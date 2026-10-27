@@ -1,14 +1,14 @@
-tap "lihaoyun6/tap", trusted: true
+tap "planetscale/tap", trusted: { formulae: ["pscale"] }
 tap "teamookla/speedtest", trusted: true
 tap "thusvill/livewallpaper", trusted: true
 # Tool for reverse engineering 3rd party, closed, binary Android apps
 brew "apktool"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.14"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Incredibly fast JavaScript runtime, bundler, test runner, and package manager
+brew "bun"
 # Statistics utility to count lines of code
 brew "cloc"
 # Cloudflare Tunnel client (formerly Argo Tunnel)
@@ -19,6 +19,8 @@ brew "coreutils"
 brew "duti"
 # Modern, maintained replacement for ls
 brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # Tools and libraries to manipulate images in select formats
@@ -41,6 +43,8 @@ brew "gnupg"
 brew "grep"
 # Update of iperf: measures TCP, UDP, and SCTP bandwidth
 brew "iperf3"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
 # Securely transfers data between computers
 brew "magic-wormhole"
 # Mac App Store command-line interface
@@ -49,8 +53,6 @@ brew "mas"
 brew "maven"
 # NCurses Disk Usage
 brew "ncdu"
-# Fast, highly customisable system info script
-brew "neofetch"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Open-source, cross-platform JavaScript runtime environment
@@ -67,6 +69,8 @@ brew "openssh"
 brew "postgresql@18", link: true
 # Theme for zsh
 brew "powerlevel10k"
+# CLI for PlanetScale Database
+brew "pscale"
 # Python interface to Tcl/Tk
 brew "python-tk@3.14"
 # Command-line YAML and XML processor that wraps jq
@@ -77,6 +81,8 @@ brew "rclone"
 brew "ripgrep"
 # Display and control your Android device
 brew "scrcpy"
+# SMART hard drive monitoring
+brew "smartmontools"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # Easiest, most secure way to use WireGuard and 2FA
@@ -97,8 +103,8 @@ brew "yubico-piv-tool"
 brew "teamookla/speedtest/speedtest"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
-# Get the battery level of all your devices on your Mac.
-cask "lihaoyun6/tap/airbattery"
+# Menu bar tool to limit maximum charging percentage
+cask "aldente"
 # Android SDK component
 cask "android-platform-tools"
 # Tools for building Android applications
@@ -109,16 +115,14 @@ cask "anki"
 cask "anydesk"
 # Chromium based browser
 cask "arc"
-# Telegram client with ghost mode and message history
-cask "ayugram"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
 # Configuration tool for the Betaflight firmware
 cask "betaflight-configurator"
+# Display management tool
+cask "betterdisplay"
 # 3D model editor for boxy models and pixel art textures
 cask "blockbench"
-# Jailbreak for iPhone 5s through iPhone X, iOS 12.0 and up
-cask "checkra1n"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Terminal-based AI coding assistant
@@ -141,6 +145,8 @@ cask "google-chrome"
 cask "google-drive"
 # Video stabilization using gyroscope data
 cask "gyroflow"
+# Menu bar manager
+cask "jordanbaird-ice"
 # Keyboard customiser
 cask "karabiner-elements"
 # File archiver
@@ -167,6 +173,8 @@ cask "notion-calendar"
 cask "nvidia-geforce-now"
 # Open-source software for live streaming and screen recording
 cask "obs"
+# Cloud storage client
+cask "onedrive"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Desktop virtualization software
@@ -213,7 +221,6 @@ mas "1Password for Safari", id: 1569813296
 mas "Apple Configurator", id: 1037126344
 mas "Blackmagic Disk Speed Test", id: 425264550
 mas "CATO", id: 6471651458
-mas "Infuse", id: 1136220934
 mas "Keynote", id: 409183694
 mas "Keynote", id: 361285480
 mas "Microsoft Excel", id: 462058435
@@ -237,6 +244,7 @@ vscode "esbenp.prettier-vscode"
 vscode "github.vscode-github-actions"
 vscode "github.vscode-pull-request-github"
 vscode "irongeek.vscode-env"
+vscode "midudev.better-svg"
 vscode "ms-azuretools.vscode-containers"
 vscode "ms-azuretools.vscode-docker"
 vscode "ms-vscode.vscode-typescript-next"
