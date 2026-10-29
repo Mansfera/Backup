@@ -147,6 +147,8 @@ cask "google-drive"
 cask "gyroflow"
 # Menu bar manager
 cask "jordanbaird-ice"
+# Menu bar battery monitor with custom charge alerts and health tracking
+cask "juicy"
 # Keyboard customiser
 cask "karabiner-elements"
 # File archiver
@@ -161,8 +163,6 @@ cask "lm-studio"
 cask "macdroid"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
-# Meet, chat, call, and collaborate in just one place
-cask "microsoft-teams"
 # Minecraft modding platform
 cask "modrinth"
 # App to write, plan, collaborate, and get organised
