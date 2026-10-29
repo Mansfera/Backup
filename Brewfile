@@ -109,8 +109,6 @@ cask "aldente"
 cask "android-platform-tools"
 # Tools for building Android applications
 cask "android-studio"
-# Memory training application
-cask "anki"
 # Allows connection to a computer remotely
 cask "anydesk"
 # Chromium based browser
