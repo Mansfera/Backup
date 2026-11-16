@@ -1,6 +1,10 @@
+tap "mansfera/tap", trusted: true
+tap "nikgrbn/tap"
 tap "planetscale/tap", trusted: { formulae: ["pscale"] }
+tap "smartthingscommunity/smartthings"
 tap "teamookla/speedtest", trusted: true
 tap "thusvill/livewallpaper", trusted: true
+tap "zerobrewhq/tap"
 # Tool for reverse engineering 3rd party, closed, binary Android apps
 brew "apktool"
 # Official Amazon AWS command-line interface
@@ -17,6 +21,8 @@ brew "cloudflared"
 brew "coreutils"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
+# Perl lib for reading and writing EXIF metadata
+brew "exiftool"
 # Modern, maintained replacement for ls
 brew "eza"
 # Like neofetch, but much faster because written mostly in C
@@ -41,8 +47,12 @@ brew "gnu-sed"
 brew "gnupg"
 # GNU grep, egrep and fgrep
 brew "grep"
+# Command-line benchmarking tool
+brew "hyperfine"
 # Update of iperf: measures TCP, UDP, and SCTP bandwidth
 brew "iperf3"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.14"
 # Securely transfers data between computers
@@ -55,6 +65,8 @@ brew "maven"
 brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Port scanning utility for large networks
+brew "nmap"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
 # Classic snake game with textual interface
@@ -65,6 +77,8 @@ brew "ollama"
 brew "openjdk@21"
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
 # Object-relational database system
 brew "postgresql@18", link: true
 # Theme for zsh
@@ -79,6 +93,8 @@ brew "python-yq"
 brew "rclone"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Rust toolchain installer
+brew "rustup"
 # Display and control your Android device
 brew "scrcpy"
 # SMART hard drive monitoring
@@ -93,18 +109,24 @@ brew "tokei"
 brew "uv"
 # Internet file retriever
 brew "wget"
+# Generate your Xcode project from a spec file and your folder structure
+brew "xcodegen"
 # Tool for managing your YubiKey configuration
 brew "ykman"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
 # Command-line tool for the YubiKey PIV application
 brew "yubico-piv-tool"
+# Adds New File, Open Terminal Here and more to Finder's right-click menu
+brew "nikgrbn/tap/finder-menu", trusted: true
+# Command-line Interface for the SmartThings APIs
+brew "smartthingscommunity/smartthings/smartthings", trusted: true
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
+# Fast package manager for Homebrew packages, written in Rust
+brew "zerobrewhq/tap/zerobrew", trusted: true
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
-# Menu bar tool to limit maximum charging percentage
-cask "aldente"
 # Android SDK component
 cask "android-platform-tools"
 # Tools for building Android applications
@@ -121,20 +143,22 @@ cask "betaflight-configurator"
 cask "betterdisplay"
 # 3D model editor for boxy models and pixel art textures
 cask "blockbench"
+# Hardware benchmarking utility
+cask "cinebench"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Terminal-based AI coding assistant
 cask "claude-code"
 # Write, edit, and chat about your code with AI
 cask "cursor"
-# Voice and text chat software
-cask "discord"
 # Drive health diagnostic & monitoring tool
 cask "drivedx"
 # Launcher for *Epic Games* games
 cask "epic-games"
 # Collaborative team software
 cask "figma"
+# Tool to measure the computer system's performance
+cask "geekbench"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Web browser
@@ -143,10 +167,10 @@ cask "google-chrome"
 cask "google-drive"
 # Video stabilization using gyroscope data
 cask "gyroflow"
+# Chromium-based web browser
+cask "helium-browser"
 # Menu bar manager
 cask "jordanbaird-ice"
-# Menu bar battery monitor with custom charge alerts and health tracking
-cask "juicy"
 # Keyboard customiser
 cask "karabiner-elements"
 # File archiver
@@ -155,10 +179,10 @@ cask "keka"
 cask "linear"
 # Animated desktop wallpapers
 cask "thusvill/livewallpaper/livewallpaper"
-# Discover, download, and run local LLMs
-cask "lm-studio"
 # Connect to your Android devices
 cask "macdroid"
+# Email as chat: several mail accounts shown as a messenger
+cask "mansfera/tap/mailbub", trusted: true
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Minecraft modding platform
@@ -201,6 +225,8 @@ cask "sublime-text"
 cask "tableplus"
 # Mesh VPN based on WireGuard
 cask "tailscale-app"
+# Web browser
+cask "thebrowsercompany-dia"
 # VPN client for secure internet access and private browsing
 cask "tunnelbear"
 # Virtual machines UI using QEMU
@@ -211,20 +237,20 @@ cask "vesktop"
 cask "vorssaint"
 # Native desktop client for WhatsApp
 cask "whatsapp"
-# Gecko based web browser
-cask "zen"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "1Password for Safari", id: 1569813296
 mas "Apple Configurator", id: 1037126344
 mas "Blackmagic Disk Speed Test", id: 425264550
 mas "CATO", id: 6471651458
+mas "Developer", id: 640199958
 mas "Keynote", id: 409183694
 mas "Keynote", id: 361285480
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft Word", id: 462054704
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "TestFlight", id: 899247664
 mas "Transporter", id: 1450874784
 mas "Xcode", id: 497799835
 mas "Yubico Authenticator", id: 1497506650
