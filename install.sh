@@ -144,6 +144,49 @@ setup_yubikey() {
 }
 setup_yubikey
 
+# ---------------------------------------------------------------------------
+# YubiKey PIV login: log in, unlock the keychain and sudo with the YubiKey PIN.
+#
+# The keys and certs (slots 9a + 9d) live ON the YubiKeys; only the pairing to
+# this Mac's account is lost in a wipe. bmm saves the paired cert hashes to
+# yubikey-piv-hashes.txt, and the same hashes re-pair here. Pairing wraps the
+# keychain with slot 9d, so each key must be plugged in while it's paired.
+# ---------------------------------------------------------------------------
+setup_piv_login() {
+    local HASHES="$BACKUP_PATH/yubikey-piv-hashes.txt"
+    local hash missing present reply
+
+    step "YubiKey Mac login"
+    # sudo: Touch ID first, then YubiKey PIN, then password.
+    grep -q pam_smartcard /etc/pam.d/sudo_local ||
+        echo 'auth       sufficient     pam_smartcard.so' | sudo tee -a /etc/pam.d/sudo_local >/dev/null
+    # Pulling a YubiKey out locks the screen.
+    sudo defaults write /Library/Preferences/com.apple.security.smartcard tokenRemovalAction -int 1
+
+    [ -s "$HASHES" ] || { echo "    no saved pairings - run bmm on a Mac with paired YubiKeys"; return; }
+    while :; do
+        present="$(sc_auth identities 2>/dev/null)"
+        missing=""
+        for hash in $(grep -E '^[0-9A-F]{40}$' "$HASHES"); do
+            sc_auth list -u "$USER" 2>/dev/null | grep -q "$hash" && continue
+            if printf '%s' "$present" | grep -q "^$hash"; then
+                echo "    pairing $(printf '%s' "$present" | grep "^$hash" | cut -f2-)"
+                echo "    (enter the YubiKey PIV PIN and your Mac password if asked)"
+                sudo sc_auth pair -u "$USER" -h "$hash" || echo "    ⚠️  pairing failed"
+            fi
+            sc_auth list -u "$USER" 2>/dev/null | grep -q "$hash" || missing="$missing $hash"
+        done
+        [ -z "$missing" ] && { echo "    all YubiKeys paired for login"; break; }
+
+        echo "    $(echo $missing | wc -w | tr -d ' ') YubiKey(s) not paired yet"
+        printf "    Plug in the other YubiKey and press Enter (s to skip) "
+        read -r reply
+        case "$reply" in [Ss]*) break ;; esac
+        sleep 2   # let CryptoTokenKit pick up the card
+    done
+}
+setup_piv_login
+
 # YubiKey agent forwarded to my servers (see ~/.ssh/agent-start.sh). Copied, not
 # stowed: launchd is unreliable with symlinked plists.
 AGENT_PLIST="$HOME/Library/LaunchAgents/com.mansfera.ssh-agent.plist"
